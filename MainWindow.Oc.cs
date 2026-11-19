@@ -3,9 +3,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace ResetExplode;
+namespace Hefesto;
 
-/// <summary>Aba RESET OC: ajustes da GPU (NVML), verificador de estabilidade e guia de overclock na BIOS.</summary>
+/// <summary>Aba OVERCLOCK: ajustes da GPU (NVML), verificador de estabilidade e guia de overclock na BIOS.</summary>
 public partial class MainWindow
 {
     public sealed record GuideStep(string Number, string Title, string Where, string Text);
