@@ -11,25 +11,29 @@ public static class ThemeManager
 {
     public static bool IsLight { get; private set; }
 
+    // Paleta da Kairós: escuro = identidade do site; claro = papel quente com o mesmo dourado, um tom mais fechado para dar contraste.
     private static readonly (object Key, string Dark, string Light)[] Palette =
     {
-        ("Bg", "#000000", "#FFFFFF"),
-        ("Panel", "#080808", "#F2F2F2"),
-        ("Card", "#0E0E0E", "#FFFFFF"),
-        ("Hover", "#181818", "#E4E4E4"),
-        ("Line", "#1F1F1F", "#CFCFCF"),
-        ("LineStrong", "#3A3A3A", "#8A8A8A"),
-        ("Fg", "#F5F5F5", "#111111"),
-        ("Muted", "#8C8C8C", "#3F3F3F"),
-        ("Faint", "#4A4A4A", "#5C5C5C"),
-        ("Ink", "#000000", "#FFFFFF"),
-        ("ThumbBrush", "#2E2E2E", "#CFCFCF"),
-        ("ThumbHover", "#6A6A6A", "#A5A5A5"),
-        ("ThumbDrag", "#9A9A9A", "#7A7A7A"),
-        (SystemColors.ControlBrushKey, "#000000", "#FFFFFF"),
-        (SystemColors.HighlightBrushKey, "#181818", "#E4E4E4"),
-        (SystemColors.InactiveSelectionHighlightBrushKey, "#181818", "#E4E4E4"),
+        ("Bg", "#0A0A0B", "#F7F5F0"),
+        ("Panel", "#0E0E10", "#EFECE5"),
+        ("Card", "#121214", "#FFFFFF"),
+        ("Hover", "#1C1C1F", "#E8E4DB"),
+        ("Line", "#27272B", "#DDD8CD"),
+        ("LineStrong", "#3D3D43", "#A8A397"),
+        ("Fg", "#F1EFEA", "#0A0A0B"),
+        ("Muted", "#A3A29D", "#55544E"),
+        ("Faint", "#6E6D68", "#77756E"),
+        ("Ink", "#0A0A0B", "#F7F5F0"),
+        ("Accent", "#F2B544", "#B47A12"),
+        ("AccentInk", "#0A0A0B", "#FFFFFF"),
+        ("ThumbBrush", "#2E2E32", "#CFCAC0"),
+        ("ThumbHover", "#6A6A6F", "#A5A096"),
+        ("ThumbDrag", "#9A9A9F", "#7A766D"),
+        (SystemColors.ControlBrushKey, "#0A0A0B", "#F7F5F0"),
+        (SystemColors.HighlightBrushKey, "#1C1C1F", "#E8E4DB"),
+        (SystemColors.InactiveSelectionHighlightBrushKey, "#1C1C1F", "#E8E4DB"),
     };
+
 
     public static void Apply(bool light)
     {

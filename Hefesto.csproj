@@ -23,6 +23,10 @@
     <Resource Include="Assets\app.ico" />
     <Resource Include="Assets\logo-badge.png" />
     <Resource Include="Assets\logo-dark.png" />
+    <!-- Fontes da identidade Kairós (SIL OFL 1.1, textos em Fonts\*-OFL.txt) -->
+    <Resource Include="Fonts\*.ttf" />
+    <EmbeddedResource Include="Fonts\*-OFL.txt" LogicalName="Licenses/%(Filename)%(Extension)" />
+    <EmbeddedResource Include="LICENSE" LogicalName="Licenses/LICENSE.txt" />
   </ItemGroup>
 
   <!-- Drivers seriais oficiais embutidos (MAKER): cada pasta Drivers\<chip> vira recurso e é extraída na hora de instalar.

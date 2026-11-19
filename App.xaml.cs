@@ -16,6 +16,16 @@ public partial class App : Application
 
     protected override void OnStartup(StartupEventArgs e)
     {
+        // Modo de desenvolvimento: Hefesto.exe --captura <arquivo.png> [NavX] [claro]
+        // Abre a janela, vai até a página do item de menu NavX, salva uma imagem dela e fecha. Usado para revisar o visual.
+        int ci = Array.IndexOf(e.Args, "--captura");
+        if (ci >= 0 && ci + 1 < e.Args.Length)
+        {
+            base.OnStartup(e);
+            Captura.Rodar(e.Args[ci + 1], ci + 2 < e.Args.Length ? e.Args[ci + 2] : null, e.Args.Contains("claro"));
+            return;
+        }
+
         bool first;
         try { _single = new Mutex(true, @"Local\Hefesto.SingleInstance", out first); }
         catch (UnauthorizedAccessException) { first = false; } // criado por outra instância com outro nível de permissão

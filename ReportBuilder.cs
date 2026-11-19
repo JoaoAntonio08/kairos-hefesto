@@ -155,15 +155,15 @@ public static class ReportBuilder
         sb.Append("</table>");
     }
 
-    private const string Css = @"
-:root{--bg:#fff;--fg:#111;--muted:#666;--line:#e3e3e3;--card:#fafafa;--ok:#111;--badbg:#111;--badfg:#fff}
-@media (prefers-color-scheme:dark){:root{--bg:#000;--fg:#f2f2f2;--muted:#8c8c8c;--line:#222;--card:#0c0c0c;--ok:#f2f2f2;--badbg:#f2f2f2;--badfg:#000}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 'Segoe UI',system-ui,sans-serif}
+    public const string Css = @"
+:root{--bg:#f7f5f0;--fg:#0a0a0b;--muted:#55544e;--line:#ddd8cd;--card:#fff;--ok:#0a0a0b;--badbg:#0a0a0b;--badfg:#f7f5f0;--gold:#b47a12}
+@media (prefers-color-scheme:dark){:root{--bg:#0a0a0b;--fg:#f1efea;--muted:#a3a29d;--line:#27272b;--card:#121214;--ok:#f1efea;--badbg:#f2b544;--badfg:#0a0a0b;--gold:#f2b544}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 Inter,'Segoe UI',system-ui,sans-serif}
 .wrap{max-width:980px;margin:0 auto;padding:32px 20px 60px}
 header{display:flex;gap:16px;align-items:center;margin-bottom:6px}.logo{width:44px;height:44px}
-h1{margin:0;font-size:26px;letter-spacing:.5px}h2{margin:34px 0 12px;font-size:17px;letter-spacing:.4px}h3{margin:0 0 8px;font-size:14px}
+h1{margin:0;font:800 30px Archivo,'Segoe UI',sans-serif;letter-spacing:.2px}h1::after{content:'';display:block;width:36px;height:3px;background:var(--gold);margin-top:6px}h2{margin:34px 0 12px;font-size:17px;letter-spacing:.4px}h3{margin:0 0 8px;font-size:14px}
 .sub,.muted{color:var(--muted)}.sub{margin:2px 0 0}.note{color:var(--muted);font-size:12px;margin:0 0 4px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:14px 16px;margin:0 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 12px}
 .row{display:flex;justify-content:space-between;gap:12px;align-items:center}
 .badge{font-size:11px;font-weight:600;letter-spacing:.6px;padding:3px 10px;border-radius:3px;border:1px solid var(--ok);color:var(--ok)}
 .badge.bad,.badge.na{background:var(--badbg);color:var(--badfg);border-color:var(--badbg)}.badge.na{opacity:.6}

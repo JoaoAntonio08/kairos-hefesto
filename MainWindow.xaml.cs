@@ -83,6 +83,7 @@ public partial class MainWindow : Window
         ThemeManager.Apply(_settings.LightTheme);
         UpdateThemeButton();
         ShowPage("PageDash");
+        SideVersion.Text = "v" + Ui.Versao;
 
         // Sensores: a lista começa vazia e é preenchida quando a detecção do hardware termina (LoadHardwareAsync).
         _monitor = new SensorMonitor();
@@ -280,12 +281,14 @@ public partial class MainWindow : Window
             case "PageMakerPorts": ScanUsb(); break;
             case "PageMakerDrv": InitMakerDrivers(); break;
             case "PageOptimize": InitOptimize(); break;
+            default: if (FindName(page) is IPagina pagina) pagina.Mostrar(); break;
         }
     }
 
     private void ShowPage(string name)
     {
-        foreach (var p in new FrameworkElement[] { PageDash, PageSystem, PageSensors, PageGpu, PageGames, PageBottleneck, PageOverlay, PageBench, PageOptimize, PageOc, PageInteg, PageLauncher, PageDriver, PageStartup, PageApps, PageMakerPorts, PageMakerDrv, PageDisks, PageEnergy, PageNet, PageStress })
+        // Todas as páginas são filhas diretas de PagesHost (as herdadas e as novas, feitas como UserControl).
+        foreach (var p in PagesHost.Children.OfType<FrameworkElement>())
             p.Visibility = p.Name == name ? Visibility.Visible : Visibility.Collapsed;
     }
 
