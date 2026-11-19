@@ -54,6 +54,12 @@ public partial class SobrePage : UserControl, IPagina
         new("System.Management, ProtectedData", "MIT", "Consultas WMI e cifra DPAPI das chaves salvas.",
             "Copyright (c) .NET Foundation e colaboradores",
             "https://github.com/dotnet/runtime", Mit("Copyright (c) .NET Foundation and Contributors")),
+        new("MFTLib", "MIT", "Leitura da tabela de arquivos (MFT) do NTFS na Limpeza profunda, para achar lixo no disco inteiro em segundos.",
+            "Copyright (c) Matt Schoen",
+            "https://github.com/mtschoen/MFTLib", Mit("Copyright (c) Matt Schoen")),
+        new("SharpCompress", "MIT", "Extração dos pacotes .7z dos emuladores em Clássicos.",
+            "Copyright (c) Adam Hathcock",
+            "https://github.com/adamhathcock/sharpcompress", Mit("Copyright (c) 2014 Adam Hathcock")),
         new("Archivo", "SIL OFL 1.1", "Fonte dos títulos e números grandes.",
             "Copyright 2020 The Archivo Project Authors",
             "https://github.com/Omnibus-Type/Archivo", Recurso("Archivo-OFL.txt")),
@@ -66,6 +72,17 @@ public partial class SobrePage : UserControl, IPagina
             "winapp2.ini é distribuído sob a licença Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).\n" +
             "O Hefesto baixa o arquivo do repositório oficial quando você abre a Limpeza profunda, lê as regras e não altera o arquivo.\n\n" +
             "Texto completo: https://creativecommons.org/licenses/by-sa/4.0/legalcode"),
+        new("Emuladores e ports (RPCS3, PCSX2, shadPS4, SpartanPort, OpenRCT2)", "GPL (de cada projeto)",
+            "Programas separados, baixados das Releases oficiais quando você pede em Clássicos. Nenhum código deles faz parte do Hefesto.",
+            "Equipes de cada projeto",
+            "https://github.com/JoaoAntonio08/kairos-hefesto/blob/main/NOTICES.md",
+            "RPCS3 (GPL-2.0) · github.com/RPCS3/rpcs3\nPCSX2 (GPL-3.0) · github.com/PCSX2/pcsx2\nshadPS4 (GPL-2.0) · github.com/shadps4-emu/shadPS4\n" +
+            "SpartanPort (GPL-2.0) · github.com/FelipePrado0/SpartanPort\nOpenRCT2 (GPL-3.0) · github.com/OpenRCT2/OpenRCT2\n\n" +
+            "O Hefesto só baixa os pacotes oficiais, confere o SHA-256 e abre os programas como processos separados.\n" +
+            "Nenhum jogo, ROM, BIOS ou firmware é baixado ou indicado."),
+        new("Ollama", "MIT", "IA local (opcional). Instalado pelo winget quando você pede; roda como programa separado.",
+            "Copyright (c) Ollama",
+            "https://github.com/ollama/ollama", Mit("Copyright (c) Ollama")),
         new("Drivers seriais (CH340, CP210x, FTDI, Arduino)", "Termos de cada fabricante",
             "Pacotes oficiais, sem modificação e com a assinatura original. Não fazem parte da licença MIT.",
             "WCH · Silicon Labs · FTDI · Arduino",

@@ -21,6 +21,8 @@ cada um com a sua própria licença. Esta lista também aparece no app, em **Sob
 | Vortice.Direct3D11, Vortice.Direct3D12, Vortice.D3DCompiler, Vortice.Dxc | Stress de GPU e benchmarks (Direct3D 11/12, DXR) | MIT | https://github.com/amerkoleci/Vortice.Windows |
 | System.Management | Consultas WMI | MIT | https://github.com/dotnet/runtime |
 | System.Security.Cryptography.ProtectedData | Cifra DPAPI das chaves salvas | MIT | https://github.com/dotnet/runtime |
+| MFTLib 0.2.0 | Leitura da MFT do NTFS (Limpeza profunda) | MIT | https://github.com/mtschoen/MFTLib |
+| SharpCompress | Extração de .7z (Clássicos) | MIT | https://github.com/adamhathcock/sharpcompress |
 
 **MPL 2.0 (LibreHardwareMonitorLib):** a biblioteca é usada sem alterações, como pacote NuGet.
 Se algum arquivo dela for modificado, esse arquivo continua sob a MPL 2.0 e o código-fonte alterado precisa ser publicado.
@@ -35,8 +37,14 @@ seguem os termos de cada fabricante. Versões, origens e SHA-256 estão em [`Dri
 
 - Logo da Kairós (ampulheta sobre um controle): © João (JoaoAntonio08). Vem do repositório
   https://github.com/JoaoAntonio08/Kairos-site (`public/media/logo.png`).
-- Fontes **Archivo** e **Inter** (a partir da versão 0.2): SIL Open Font License 1.1. O texto completo da OFL
-  será incluído no app em **Sobre → Licenças** junto com as fontes.
+- Fontes **Archivo** e **Inter**: SIL Open Font License 1.1, embutidas no app. O texto completo da OFL está em
+  [`Fonts/`](Fonts) e no próprio app, em **Sobre e licenças**.
+
+## Dados baixados em tempo de execução
+
+| Dado | Licença | Como é usado |
+| --- | --- | --- |
+| winapp2.ini (projeto Winapp2, MoscaDotTo e colaboradores) | CC BY-SA 4.0 | Baixado de https://github.com/MoscaDotTo/Winapp2 quando você usa a Limpeza profunda, conferido pelo hash do Git e guardado em `%LocalAppData%\Hefesto\winapp2`. Nunca embutido. Só as regras de arquivo são usadas. |
 
 ## Programas externos (não incluídos)
 
@@ -47,5 +55,16 @@ Nenhum código deles entra no Hefesto.
 | --- | --- | --- |
 | PawnIO | Licença própria | Instalado pelo winget (`namazso.PawnIO`) para ler sensores da CPU |
 | Corsair iCUE SDK | Termos da Corsair | Baixado do GitHub oficial só quando o usuário confirma |
-| Emuladores e ports (a partir da versão 0.5) | Em geral GPL | Baixados das Releases oficiais; nunca embutidos nem copiados |
+| RPCS3 | GPL-2.0 | Baixado de https://github.com/RPCS3/rpcs3-binaries-win/releases, SHA-256 conferido |
+| PCSX2 | GPL-3.0 | Baixado de https://github.com/PCSX2/pcsx2/releases, SHA-256 conferido |
+| shadPS4 | GPL-2.0 | Baixado de https://github.com/shadps4-emu/shadPS4/releases, SHA-256 conferido |
+| SpartanPort | GPL-2.0 | Baixado de https://github.com/FelipePrado0/SpartanPort/releases, SHA-256 conferido |
+| OpenRCT2 | GPL-3.0 | Baixado de https://github.com/OpenRCT2/OpenRCT2/releases, SHA-256 conferido |
+| Ollama | MIT | Instalado pelo winget (`Ollama.Ollama`) só quando o usuário pede, para a IA local |
+| Microsoft Defender (MpCmdRun) | Parte do Windows | Usado para verificar vírus; o Hefesto nunca muda a configuração dele |
+
+Jogos, ROMs, BIOS, firmware e dumps nunca são baixados nem indicados pelo Hefesto.
+
+O desinstalador foi inspirado no fluxo do [Bulk Crap Uninstaller](https://github.com/Klocman/Bulk-Crap-Uninstaller)
+(Apache 2.0), sem usar código dele.
 | winapp2.ini (a partir da versão 0.4) | CC BY-SA 4.0 | Baixado em tempo de execução, com crédito; nunca embutido |

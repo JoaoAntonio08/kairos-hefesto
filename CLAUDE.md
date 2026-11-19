@@ -13,7 +13,15 @@ Responda e escreva commits, comentários de UI e documentação em **português 
 - **0.1.0 (Fundação)**: feito. Projeto/assembly/namespace `Hefesto`, ícone e logos da Kairós em `Assets/`,
   módulos sem o prefixo "RESET", `LICENSE` com dois copyrights, `NOTICES.md`, README com a origem no topo.
   Configurações em `%AppData%\Hefesto`. CI compila em todo push; release só por tag `v*`, com `SHA256SUMS.txt`.
-- Próximo: **0.2 (Visual)** no branch `visual`.
+- **0.2 a 0.6**: feitos e publicados juntos na v0.6.0.
+  - Visual: `Theme.xaml`/`ThemeManager.cs` com a paleta Kairós, fontes em `Fonts/`, `Paginas/SobrePage` (catálogo de licenças).
+  - Páginas novas são UserControls em `Paginas/` com `IPagina.Mostrar()`; nav e páginas entram pelos marcadores
+    `<!--HEFESTO:NAV-MANUT-->`, `<!--HEFESTO:NAV-JOGOS-->`, `<!--HEFESTO:NAV-TOOLS-->`, `<!--HEFESTO:NAV-->` e `<!--HEFESTO:PAGES-->` em `MainWindow.xaml`.
+  - Limpeza: `Limpeza/` (Protecao, Lixeira, LimpezaRapida, RelatorioLimpeza, MapaDisco, LixoGlobal, Winapp2). Tudo que remove
+    passa por `Lixeira.RemoverAsync` (SHFileOperation com undo, quarentena em `<disco>:\Hefesto Quarentena`).
+  - Clássicos: `Classicos/Classicos.cs` (catálogo, GitHub Releases, SHA-256, SharpCompress). Extras em `Extras/`.
+  - Modo de captura para testar telas sem abrir a janela: `--captura` (ver README).
+- Próximo: correções a partir do uso real; ideias: nomes de jogos da Steam não instalados no backup, mais emuladores.
 - Nomes dos módulos depois do rebrand: menu DIAGNÓSTICO, JOGOS, DESEMPENHO, FERRAMENTAS, MAKER;
   páginas BENCH, OTIMIZAR, OVERCLOCK, DRIVERS, INTEGRAÇÃO. Os `x:Name` internos (ex.: `GrpExplode`) ficaram como estavam.
 - Os logos são gerados a partir de `public/media/logo.png` do site: `logo.png` (claro, tema escuro),

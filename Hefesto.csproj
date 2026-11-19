@@ -12,7 +12,7 @@
     <Product>Hefesto</Product>
     <Company>Kairós</Company>
     <Copyright>Copyright (c) 2026 Gustavo (GustavoReset); Copyright (c) 2026 João (JoaoAntonio08, Kairós)</Copyright>
-    <Version>0.1.0</Version>
+    <Version>0.6.0</Version>
     <!-- Sempre otimizado: o BENCH e os stress tests precisam do JIT otimizado também em Debug -->
     <Optimize>true</Optimize>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>

@@ -8,7 +8,7 @@ App gratuito e de código aberto para Windows que reúne **diagnóstico, manuten
 
 - **Download oficial:** só nas [Releases deste repositório](https://github.com/JoaoAntonio08/kairos-hefesto/releases),
   sempre com o SHA-256 ao lado. O app roda como administrador: não use cópias baixadas de outros lugares.
-- **Versão atual:** 0.1.0 (Fundação: nome, ícone, licenças e créditos).
+- **Versão atual:** 0.6.0 (todo o roteiro: visual Kairós, limpeza rápida e profunda, Clássicos e extras).
 
 ## Roteiro
 
@@ -29,6 +29,25 @@ App gratuito e de código aberto para Windows que reúne **diagnóstico, manuten
 - Downloads só de fontes oficiais, com verificação de hash ou assinatura quando houver.
 - A limpeza nunca apaga de vez: tudo vai para a Lixeira ou para uma pasta de quarentena.
 - Nada que reduza a segurança do Windows (Defender, UAC, Update).
+
+## Novo no Hefesto
+
+- **Visual Kairós**: preto, cinzas e dourado `#F2B544`, títulos em Archivo e texto em Inter. Tela **Sobre e licenças** com o texto de cada licença.
+- **Limpeza rápida** (MANUTENÇÃO): Temp e CrashDumps com mais de N dias, caches de navegador (só pastas de cache) e de ferramentas de dev,
+  instaladores velhos em Downloads. Modo simulação ligado por padrão, envio para a Lixeira (ou quarentena quando não cabe),
+  relatório HTML e a seção **Pode ser seu**: arquivos de trabalho (.blend, .mp4, .docx, .py, .psd…) achados em pastas temporárias,
+  com nomes escritos por pessoa separados de nomes gerados por programa. A limpeza nunca mexe neles.
+- **Lista de proteção fixa**: senhas, cookies e histórico de navegadores, `.ssh`, credenciais, saves de jogo, pastas pessoais,
+  Windows e Arquivos de Programas, e qualquer coisa dentro de um repositório git.
+- **Limpeza profunda**: mapa do disco (o que ocupa espaço, pasta por pasta, e os maiores arquivos), lixo no disco inteiro
+  (Thumbs.db, ._ do macOS, `__pycache__`, .dmp e .tmp antigos) lendo a MFT do NTFS, e as regras da comunidade **winapp2**
+  (baixadas do repositório oficial, só regras de arquivo, todas desmarcadas).
+- **Clássicos** (JOGOS): RPCS3, PCSX2, shadPS4, SpartanPort e OpenRCT2, baixados das Releases oficiais com SHA-256 conferido,
+  atualizados e abertos pelo Hefesto. O OpenRCT2 é configurado sozinho com o RCT2 da Steam ou do GOG.
+- **Backup de saves** (JOGOS): Saved Games, My Games e saves da Steam num .zip com LEIA-ME para restaurar.
+- **Desinstalador** (MANUTENÇÃO): roda o desinstalador oficial e mostra as pastas que sobraram para mandar à Lixeira.
+- **Verificação de vírus** (MANUTENÇÃO): estado do Microsoft Defender e verificações pelo MpCmdRun, sem mudar configuração.
+- **IA local** (FERRAMENTAS): explica relatórios em português simples com o Ollama, rodando no próprio PC.
 
 ## O que o app faz hoje
 
@@ -149,8 +168,16 @@ App WPF (.NET 8). Módulos herdados do ResetExplode v0.16:
 - Interface, stress test e gráficos: código próprio.
 - Sensores: [LibreHardwareMonitorLib](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor) (MPL 2.0) — mantenha o aviso de licença ao distribuir.
 - Informações do sistema: WMI do Windows.
+- Leitura da MFT na Limpeza profunda: [MFTLib](https://github.com/mtschoen/MFTLib) (MIT).
+- Extração de .7z em Clássicos: [SharpCompress](https://github.com/adamhathcock/sharpcompress) (MIT).
 - Medição de FPS: [TraceEvent](https://github.com/microsoft/perfview) (MIT), da Microsoft, para ler eventos ETW.
 - Renderização do stress de GPU: [Vortice.Windows](https://github.com/amerkoleci/Vortice.Windows) (MIT), bindings de Direct3D 11 para .NET. Direct3D 12 e DXC (compilador de shaders da Microsoft) também via Vortice, no teste de ray tracing.
+
+## Modo de captura (desenvolvimento)
+
+`Hefesto.exe --captura <arquivo.png> [NavX] [claro] [acao:Metodo_Click] [marcar:Controle] [espera:segundos]` abre a janela
+fora da tela, navega até a página `NavX`, opcionalmente aciona um botão (só ações sem efeito permanente, como analisar em
+modo simulação) e salva um PNG. `instalar:<id>` testa a instalação de um clássico e grava o resultado em `<arquivo.png>.txt`.
 
 ## Requisitos
 - Windows 10/11, 64 bits
