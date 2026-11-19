@@ -317,6 +317,16 @@
                                 </StackPanel>
                             </RadioButton>
                             </StackPanel>
+                            <ToggleButton x:Name="GrpManut" Style="{StaticResource NavGroup}" Content="MANUTENÇÃO"/>
+                            <StackPanel x:Name="GrpManutItems" Margin="10,0,0,4" Visibility="{Binding IsChecked, ElementName=GrpManut, Converter={StaticResource BoolVis}}">
+                            <RadioButton x:Name="NavLimpeza" Style="{StaticResource NavItem}" Tag="PageLimpeza" Checked="Nav_Checked">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="&#xE74D;" FontFamily="{StaticResource Icons}" FontSize="14" Width="28" VerticalAlignment="Center"/>
+                                    <TextBlock Text="Limpeza rápida" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </RadioButton>
+                            <!--HEFESTO:NAV-MANUT-->
+                            </StackPanel>
                             <!--HEFESTO:NAV-->
                             <RadioButton x:Name="NavSobre" Style="{StaticResource NavItem}" Tag="PageSobre" Checked="Nav_Checked" Margin="12,14,12,1">
                                 <StackPanel Orientation="Horizontal">
@@ -334,6 +344,7 @@
 
                 <!-- ===== Páginas novas do Hefesto (UserControls em Paginas\) ===== -->
                 <local:SobrePage x:Name="PageSobre" Visibility="Collapsed"/>
+                <local:LimpezaPage x:Name="PageLimpeza" Visibility="Collapsed"/>
                 <!--HEFESTO:PAGES-->
 
                 <!-- ===== VISÃO GERAL (painel) ===== -->

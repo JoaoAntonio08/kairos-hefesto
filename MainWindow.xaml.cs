@@ -33,7 +33,7 @@ public partial class MainWindow : Window
     private float _stressMaxTemp;
 
     // Jogos
-    private readonly AppSettings _settings = AppSettings.Load();
+    private readonly AppSettings _settings = AppSettings.Atual;
     private readonly HowManyFpsClient _fpsApi = new();
     private List<GameRow> _gameRows = new();
     private ListCollectionView? _gameView;

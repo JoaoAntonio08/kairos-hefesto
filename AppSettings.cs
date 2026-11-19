@@ -70,6 +70,22 @@ public sealed class AppSettings
     // Aparência
     public bool LightTheme { get; set; }
 
+    // LIMPEZA (Hefesto)
+    public int LimpezaDiasTemp { get; set; } = 7;
+    public int LimpezaDiasInstaladores { get; set; } = 30;
+    public List<string> LimpezaRegrasDesligadas { get; set; } = new();
+
+    // CLÁSSICOS (Hefesto): id do emulador/port → versão (tag) instalada
+    public Dictionary<string, string> Classicos { get; set; } = new();
+
+    // IA local (Hefesto)
+    public string? OllamaModelo { get; set; }
+
+    /// <summary>Instância única usada pela janela principal e pelas páginas novas.</summary>
+    [System.Text.Json.Serialization.JsonIgnore]
+    public static AppSettings Atual => _atual ??= Load();
+    private static AppSettings? _atual;
+
     // Overlay
     public string OverlayCorner { get; set; } = "TL";
     public double OverlayScale { get; set; } = 1.0;

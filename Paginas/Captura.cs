@@ -17,7 +17,17 @@ public static class Captura
         if (claro) ThemeManager.Apply(true);
         if (nav != null && w.FindName(nav) is RadioButton rb) rb.IsChecked = true;
 
-        var t = new DispatcherTimer { Interval = TimeSpan.FromSeconds(4) };
+        // "acao:<Metodo_Click>" aciona um botão da página aberta (só ações sem efeito permanente, ex.: Analisar em simulação).
+        string? acao = Environment.GetCommandLineArgs().FirstOrDefault(a => a.StartsWith("acao:"))?[5..];
+        int espera = 4;
+        if (acao != null && nav != null && w.FindName(nav) is RadioButton { Tag: string pg } && w.FindName(pg) is FrameworkElement pagina)
+        {
+            var m = pagina.GetType().GetMethod(acao, System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public);
+            w.Dispatcher.BeginInvoke(() => m?.Invoke(pagina, new object[] { pagina, new RoutedEventArgs() }), DispatcherPriority.ApplicationIdle);
+            espera = 25;
+        }
+
+        var t = new DispatcherTimer { Interval = TimeSpan.FromSeconds(espera) };
         t.Tick += (_, _) =>
         {
             t.Stop();
