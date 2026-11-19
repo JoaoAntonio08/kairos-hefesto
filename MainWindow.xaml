@@ -247,6 +247,13 @@
                                     <TextBlock Text="Overlay" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </RadioButton>
+                            <RadioButton x:Name="NavClassicos" Style="{StaticResource NavItem}" Tag="PageClassicos" Checked="Nav_Checked">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="&#xE7FC;" FontFamily="{StaticResource Icons}" FontSize="14" Width="28" VerticalAlignment="Center"/>
+                                    <TextBlock Text="Clássicos" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </RadioButton>
+                            <!--HEFESTO:NAV-JOGOS-->
                             </StackPanel>
                             <ToggleButton x:Name="GrpPerf" Style="{StaticResource NavGroup}" Content="DESEMPENHO"/>
                             <StackPanel x:Name="GrpPerfItems" Margin="10,0,0,4" Visibility="{Binding IsChecked, ElementName=GrpPerf, Converter={StaticResource BoolVis}}">
@@ -327,7 +334,7 @@
                             </RadioButton>
                             <RadioButton x:Name="NavLimpezaProfunda" Style="{StaticResource NavItem}" Tag="PageLimpezaProfunda" Checked="Nav_Checked">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="&#xE81E;" FontFamily="{StaticResource Icons}" FontSize="14" Width="28" VerticalAlignment="Center"/>
+                                    <TextBlock Text="&#xE7B8;" FontFamily="{StaticResource Icons}" FontSize="14" Width="28" VerticalAlignment="Center"/>
                                     <TextBlock Text="Limpeza profunda" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </RadioButton>
@@ -352,6 +359,7 @@
                 <local:SobrePage x:Name="PageSobre" Visibility="Collapsed"/>
                 <local:LimpezaPage x:Name="PageLimpeza" Visibility="Collapsed"/>
                 <local:LimpezaProfundaPage x:Name="PageLimpezaProfunda" Visibility="Collapsed"/>
+                <local:ClassicosPage x:Name="PageClassicos" Visibility="Collapsed"/>
                 <!--HEFESTO:PAGES-->
 
                 <!-- ===== VISÃO GERAL (painel) ===== -->

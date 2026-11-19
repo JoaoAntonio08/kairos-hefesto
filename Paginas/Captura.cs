@@ -30,6 +30,21 @@ public static class Captura
             espera = int.TryParse(Environment.GetCommandLineArgs().FirstOrDefault(a => a.StartsWith("espera:"))?[7..], out int s) ? s : 25;
         }
 
+        // "instalar:<id>" testa o download/extração de um clássico (sem diálogo) e grava o resultado em <png>.txt.
+        if (Environment.GetCommandLineArgs().FirstOrDefault(a => a.StartsWith("instalar:"))?[9..] is string id
+            && Classicos.Catalogo.FirstOrDefault(c => c.Id == id) is Classico cl)
+        {
+            espera = 600;
+            _ = Task.Run(async () =>
+            {
+                string r;
+                try { r = await Classicos.Instalar(cl, null, CancellationToken.None) + "\nexe: " + Classicos.Exe(cl); }
+                catch (Exception ex) { r = "ERRO: " + ex; }
+                File.WriteAllText(arquivo + ".txt", r);
+                await w.Dispatcher.InvokeAsync(() => Application.Current.Shutdown());
+            });
+        }
+
         var t = new DispatcherTimer { Interval = TimeSpan.FromSeconds(espera) };
         t.Tick += (_, _) =>
         {
