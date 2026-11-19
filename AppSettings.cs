@@ -81,6 +81,9 @@ public sealed class AppSettings
     // IA local (Hefesto)
     public string? OllamaModelo { get; set; }
 
+    // Backup de saves (Hefesto): pastas extras escolhidas pelo usuário
+    public List<string> BackupPastasExtras { get; set; } = new();
+
     /// <summary>Instância única usada pela janela principal e pelas páginas novas.</summary>
     [System.Text.Json.Serialization.JsonIgnore]
     public static AppSettings Atual => _atual ??= Load();

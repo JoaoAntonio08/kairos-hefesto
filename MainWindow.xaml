@@ -253,6 +253,12 @@
                                     <TextBlock Text="Clássicos" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </RadioButton>
+                            <RadioButton x:Name="NavBackupSaves" Style="{StaticResource NavItem}" Tag="PageBackupSaves" Checked="Nav_Checked">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="&#xE896;" FontFamily="{StaticResource Icons}" FontSize="14" Width="28" VerticalAlignment="Center"/>
+                                    <TextBlock Text="Backup de saves" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </RadioButton>
                             <!--HEFESTO:NAV-JOGOS-->
                             </StackPanel>
                             <ToggleButton x:Name="GrpPerf" Style="{StaticResource NavGroup}" Content="DESEMPENHO"/>
@@ -308,6 +314,13 @@
                                     <TextBlock Text="Integração" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </RadioButton>
+                            <RadioButton x:Name="NavIaLocal" Style="{StaticResource NavItem}" Tag="PageIaLocal" Checked="Nav_Checked">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="&#xE8BD;" FontFamily="{StaticResource Icons}" FontSize="14" Width="28" VerticalAlignment="Center"/>
+                                    <TextBlock Text="IA local" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </RadioButton>
+                            <!--HEFESTO:NAV-TOOLS-->
                             </StackPanel>
                             <ToggleButton x:Name="GrpMaker" Style="{StaticResource NavGroup}" Content="MAKER"/>
                             <StackPanel x:Name="GrpMakerItems" Margin="10,0,0,4" Visibility="{Binding IsChecked, ElementName=GrpMaker, Converter={StaticResource BoolVis}}">
@@ -338,6 +351,18 @@
                                     <TextBlock Text="Limpeza profunda" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </RadioButton>
+                            <RadioButton x:Name="NavDesinstalador" Style="{StaticResource NavItem}" Tag="PageDesinstalador" Checked="Nav_Checked">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="&#xE711;" FontFamily="{StaticResource Icons}" FontSize="14" Width="28" VerticalAlignment="Center"/>
+                                    <TextBlock Text="Desinstalador" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </RadioButton>
+                            <RadioButton x:Name="NavDefender" Style="{StaticResource NavItem}" Tag="PageDefender" Checked="Nav_Checked">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="&#xEA18;" FontFamily="{StaticResource Icons}" FontSize="14" Width="28" VerticalAlignment="Center"/>
+                                    <TextBlock Text="Verificação de vírus" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </RadioButton>
                             <!--HEFESTO:NAV-MANUT-->
                             </StackPanel>
                             <!--HEFESTO:NAV-->
@@ -360,6 +385,10 @@
                 <local:LimpezaPage x:Name="PageLimpeza" Visibility="Collapsed"/>
                 <local:LimpezaProfundaPage x:Name="PageLimpezaProfunda" Visibility="Collapsed"/>
                 <local:ClassicosPage x:Name="PageClassicos" Visibility="Collapsed"/>
+                <local:DesinstaladorPage x:Name="PageDesinstalador" Visibility="Collapsed"/>
+                <local:DefenderPage x:Name="PageDefender" Visibility="Collapsed"/>
+                <local:BackupSavesPage x:Name="PageBackupSaves" Visibility="Collapsed"/>
+                <local:IaLocalPage x:Name="PageIaLocal" Visibility="Collapsed"/>
                 <!--HEFESTO:PAGES-->
 
                 <!-- ===== VISÃO GERAL (painel) ===== -->

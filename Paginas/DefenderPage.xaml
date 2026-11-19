@@ -1,0 +1,31 @@
+<UserControl x:Class="Hefesto.DefenderPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="36,30,36,40">
+            <TextBlock Text="VERIFICAÇÃO DE VÍRUS" Style="{StaticResource H1}"/>
+            <TextBlock Style="{StaticResource Sub}" TextWrapping="Wrap" MaxWidth="820" HorizontalAlignment="Left"
+                       Text="Usa o Microsoft Defender que já vem no Windows: mostra o estado da proteção, atualiza as definições e faz verificações. O Hefesto nunca desliga nem muda a proteção."/>
+
+            <TextBlock x:Name="Estado" Style="{StaticResource Hero}" FontSize="44" Margin="0,22,0,0" Text="…"/>
+            <TextBlock x:Name="EstadoSub" Foreground="{DynamicResource Muted}" TextWrapping="Wrap" MaxWidth="820" HorizontalAlignment="Left"/>
+
+            <WrapPanel Margin="0,20,0,0">
+                <Button x:Name="BtnRapida" Style="{StaticResource AccentButton}" Content="VERIFICAÇÃO RÁPIDA" Padding="20,10" Margin="0,0,10,8" Click="Rapida_Click"/>
+                <Button x:Name="BtnAtualizar" Style="{StaticResource PrimaryButton}" Content="ATUALIZAR DEFINIÇÕES" Padding="16,10" Margin="0,0,10,8" Click="Atualizar_Click"/>
+                <Button x:Name="BtnPasta" Style="{StaticResource OutlineButton}" Content="VERIFICAR PASTA…" Padding="16,10" Margin="0,0,10,8" Click="Pasta_Click"/>
+                <Button x:Name="BtnArquivo" Style="{StaticResource OutlineButton}" Content="VERIFICAR ARQUIVO…" Padding="16,10" Margin="0,0,10,8" Click="Arquivo_Click"/>
+                <Button x:Name="BtnCompleta" Style="{StaticResource OutlineButton}" Content="VERIFICAÇÃO COMPLETA" Padding="16,10" Margin="0,0,10,8" Click="Completa_Click"/>
+                <Button x:Name="BtnCancelar" Style="{StaticResource OutlineButton}" Content="CANCELAR" Padding="16,10" Margin="0,0,10,8" Visibility="Collapsed" Click="Cancelar_Click"/>
+            </WrapPanel>
+            <TextBlock x:Name="Status" Foreground="{DynamicResource Muted}" TextWrapping="Wrap" Margin="0,6,0,0"/>
+            <Border Style="{StaticResource CardBorder}" Margin="0,12,0,0" Padding="14,10" x:Name="CaixaSaida" Visibility="Collapsed">
+                <TextBlock x:Name="Saida" FontFamily="{StaticResource Mono}" FontSize="12" TextWrapping="Wrap" Foreground="{DynamicResource Muted}"/>
+            </Border>
+
+            <TextBlock Text="Detecções recentes" FontFamily="{StaticResource Display}" FontWeight="ExtraBold" FontSize="20" Margin="0,30,0,6"/>
+            <TextBlock x:Name="Ameacas" Foreground="{DynamicResource Muted}" TextWrapping="Wrap"/>
+            <Button Style="{StaticResource OutlineButton}" Content="ABRIR SEGURANÇA DO WINDOWS" Padding="16,9" Margin="0,16,0,0" HorizontalAlignment="Left" Click="Seguranca_Click"/>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
