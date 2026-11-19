@@ -204,7 +204,7 @@
                             </RadioButton>
                             <RadioButton x:Name="NavDisks" Style="{StaticResource NavItem}" Tag="PageDisks" Checked="Nav_Checked">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="&#xEDA2;" FontFamily="{StaticResource Icons}" FontSize="14" Width="28" VerticalAlignment="Center"/>
+                                    <TextBlock Text="&#xE81E;" FontFamily="{StaticResource Icons}" FontSize="14" Width="28" VerticalAlignment="Center"/>
                                     <TextBlock Text="Discos" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </RadioButton>
@@ -325,6 +325,12 @@
                                     <TextBlock Text="Limpeza rápida" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </RadioButton>
+                            <RadioButton x:Name="NavLimpezaProfunda" Style="{StaticResource NavItem}" Tag="PageLimpezaProfunda" Checked="Nav_Checked">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="&#xE81E;" FontFamily="{StaticResource Icons}" FontSize="14" Width="28" VerticalAlignment="Center"/>
+                                    <TextBlock Text="Limpeza profunda" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </RadioButton>
                             <!--HEFESTO:NAV-MANUT-->
                             </StackPanel>
                             <!--HEFESTO:NAV-->
@@ -345,6 +351,7 @@
                 <!-- ===== Páginas novas do Hefesto (UserControls em Paginas\) ===== -->
                 <local:SobrePage x:Name="PageSobre" Visibility="Collapsed"/>
                 <local:LimpezaPage x:Name="PageLimpeza" Visibility="Collapsed"/>
+                <local:LimpezaProfundaPage x:Name="PageLimpezaProfunda" Visibility="Collapsed"/>
                 <!--HEFESTO:PAGES-->
 
                 <!-- ===== VISÃO GERAL (painel) ===== -->

@@ -62,6 +62,8 @@ public static class Protecao
 
         var segs = p.Split('\\', StringSplitOptions.RemoveEmptyEntries);
         if (segs.Any(s => s.Equals("Hefesto Quarentena", StringComparison.OrdinalIgnoreCase))) return "quarentena do Hefesto";
+        if (segs.Any(s => s.Equals("$Recycle.Bin", StringComparison.OrdinalIgnoreCase) || s.Equals("System Volume Information", StringComparison.OrdinalIgnoreCase)))
+            return "Lixeira ou pasta do sistema (esvazie a Lixeira pelo próprio Windows)";
         foreach (var s in segs)
             if (SegmentosSensiveis.Contains(s))
                 return s.Equals(".git", StringComparison.OrdinalIgnoreCase) ? "repositório git" : "chaves e credenciais";

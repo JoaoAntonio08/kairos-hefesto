@@ -22,9 +22,12 @@ public static class Captura
         int espera = 4;
         if (acao != null && nav != null && w.FindName(nav) is RadioButton { Tag: string pg } && w.FindName(pg) is FrameworkElement pagina)
         {
+            // "marcar:<Nome>" liga um RadioButton/CheckBox da página antes (ex.: uma aba).
+            foreach (var mc in Environment.GetCommandLineArgs().Where(a => a.StartsWith("marcar:")))
+                if (pagina.FindName(mc[7..]) is System.Windows.Controls.Primitives.ToggleButton tb) tb.IsChecked = true;
             var m = pagina.GetType().GetMethod(acao, System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public);
             w.Dispatcher.BeginInvoke(() => m?.Invoke(pagina, new object[] { pagina, new RoutedEventArgs() }), DispatcherPriority.ApplicationIdle);
-            espera = 25;
+            espera = int.TryParse(Environment.GetCommandLineArgs().FirstOrDefault(a => a.StartsWith("espera:"))?[7..], out int s) ? s : 25;
         }
 
         var t = new DispatcherTimer { Interval = TimeSpan.FromSeconds(espera) };
